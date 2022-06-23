@@ -2,7 +2,6 @@ package strategy;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Base64.Decoder;
 
@@ -28,7 +27,7 @@ public class MainTest {
 		encoder.setEncodingStrategy(base64Strategy);
 		
 		String encodingString = encoder.getMessage(text);
-		System.out.println(encodingString);
+		System.out.println("encodingString : " + encodingString);
 		
 		// 디코딩 해보기
 		try {
@@ -40,8 +39,8 @@ public class MainTest {
 		
 		// 문제 Base64 디코딩 해보기
 		Decoder base64Decoder = Base64.getDecoder();
-		String base64Decoding = new String(base64Decoder.decode(encodingString));
-		System.out.println("base64Decoding : " + base64Decoding);
+		String base64DecodingString = new String(base64Decoder.decode(encodingString));
+		System.out.println("base64DecodingString : " + base64DecodingString);
 		
 	}
 
